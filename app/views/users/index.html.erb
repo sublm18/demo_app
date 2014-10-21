@@ -1,0 +1,31 @@
+<h1>Wine List</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Wine</th>
+      <th>Winery</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Wine', new_user_path %>
+<br>
+<a href="http://localhost:3000/microposts">Wine Reviews</a>
